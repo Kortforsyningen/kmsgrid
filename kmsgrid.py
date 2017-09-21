@@ -69,7 +69,7 @@ import osr
 # pylint: disable=invalid-name
 # allow names like N, m, n and co
 
-__version__='1.0.0'
+__version__='1.0.1'
 
 gdal.UseExceptions()
 
@@ -379,6 +379,11 @@ def main():
     """Main program - only used when called from command line."""
     argparser = argparse.ArgumentParser(description='Read binary grid files from trlib.',
                                         prog='kmsgrid')
+    argparser.add_argument(
+        '--version',
+        action='version',
+        version='%(prog)s {version}'.format(version=__version__),
+    )
 
     subparsers = argparser.add_subparsers(
         title='Subcommands',
