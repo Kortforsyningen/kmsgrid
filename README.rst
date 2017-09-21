@@ -5,7 +5,7 @@
 ``kmsgrid`` is a small utility that makes it easy to work with the various
 datum 
 `grid files <ftp://ftp.sdfe.dk/download/transformationsprogram/Geoids2013.zip>`_
-made by KMS/DTU for the transformation library TrLib (KSMTrans).
+made by KMS/DTU for the transformation library TrLib (KMSTrans).
 
 
 Using kmsgrid
@@ -17,7 +17,7 @@ Using kmsgrid
 Command line
 -------------------------------------------------------------------------------
 
-The ``kmsgrid`` command line utility is made up of two sub-utilities: "info"
+The ``kmsgrid`` command line utility comprises two sub-utilities: "info"
 and "translate".
 
 ::
@@ -39,10 +39,8 @@ and "translate".
 Info
 ...............................................................................
 
-The ``info`` sub-command is used for getting information about a grid. Either
-information about the whole file can be presented on screen or information
-about a single point.
-
+The ``info`` sub-command is used for getting information about a grid.
+Information can be queried about a single point, or about the entire file.
 ::
 
     $ kmsgrid info --help
@@ -54,7 +52,7 @@ about a single point.
     optional arguments:
       -h, --help   show this help message and exit
       --point I J  Value(s) at a grid index (I,J). Prints values from all
-                   dimensions of the grid.d
+                   dimensions of the grid.
 
 
 Get information about a 3D grid::
@@ -93,9 +91,9 @@ Translate
 ...............................................................................
 
 The ``translate`` sub-command work similar to ``gdal_translate`` in that it
-translates from one format to another. In fact it uses GDAL behind the scenes
-to convert KMS grids to more standardized formats. Only a small subset of the
-available GDAL formats can be used with ``kmsgrid``.
+translates from one format to another. In fact, behind the scenes, it uses GDAL
+to convert KMS grids to more common formats. Only a small subset of the
+GDAL formats available can be used with ``kmsgrid``.
 
 ::
 
@@ -114,8 +112,8 @@ available GDAL formats can be used with ``kmsgrid``.
       --driver DRIVER, -d DRIVER
                             Output format. Currently supports: GTiff, GTX, NTv2
       --creation_options CREATION_OPTIONS, -co CREATION_OPTIONS
-                            Additional GDAL creation options. Has to be formatted
-                            like "PARAM1=foo PARAM2=bar".
+                            Additional GDAL creation options. Must be formatted
+                            as "PARAM1=foo PARAM2=bar".
 
 Translate the DVR90 geoid grid to GTX format::
 
@@ -160,6 +158,4 @@ Alternatively ``kmsgrid`` can be installed from the Python Package Index with
 ``pip``::
 
   pip install kmsgrid
-
-
-
+  
