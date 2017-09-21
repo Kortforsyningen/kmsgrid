@@ -22,7 +22,7 @@ setup(
     description='Read and convert grids from KMS.',
     long_description=readme(),
     classifiers=[
-      'Development Status :: 3 - Alpha',
+      'Development Status :: 5 - Production/Stable',
       'Intended Audience :: Developers',
       'Intended Audience :: Science/Research',
       'License :: OSI Approved :: ISC License (ISCL)',
