@@ -307,6 +307,10 @@ class KMSGrid(object):
                 )
             nbands = 4
 
+        nodata = 9999.99
+        if gdal_driver == 'GTX':
+            nodata = -88.88880
+
         driver = gdal.GetDriverByName(gdal_driver)
         co = ['AREA_OR_POINT=POINT']
         if create_options is not None:
@@ -325,7 +329,7 @@ class KMSGrid(object):
 
         for i, dim in enumerate(dimensions):
             band = data_src.GetRasterBand(i+1)
-            band.SetNoDataValue(9999.99)
+            band.SetNoDataValue(nodata)
 
             band.WriteArray(self.data[dim-1])
             band.FlushCache()
