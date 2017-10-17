@@ -69,7 +69,7 @@ import osr
 # pylint: disable=invalid-name
 # allow names like N, m, n and co
 
-__version__='1.0.1'
+__version__='1.0.2'
 
 gdal.UseExceptions()
 

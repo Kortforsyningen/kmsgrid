@@ -38,4 +38,5 @@ setup(
     author_email='kreve@sdfe.dk',
     license='ISC',
     py_modules=['kmsgrid'],
+    install_requires=['numpy', 'gdal', 'osr'],
 )
