@@ -69,7 +69,7 @@ import osr
 # pylint: disable=invalid-name
 # allow names like N, m, n and co
 
-__version__='1.0.2'
+__version__='1.1.0'
 
 gdal.UseExceptions()
 
@@ -77,6 +77,7 @@ SUPPORTED_DRIVERS = [
     'GTiff',
     'GTX',
     'NTv2',
+    'CTable2',
 ]
 
 # Record definition of geoid grid
@@ -300,7 +301,7 @@ class KMSGrid(object):
         """
 
         nbands = len(dimensions)
-        if gdal_driver == 'NTv2':
+        if gdal_driver in ('NTv2', 'CTable2'):
             if len(dimensions) != 2:
                 raise ValueError(
                     'Number of dimensions has to be exactly 2 when using the NTv2 driver.'
