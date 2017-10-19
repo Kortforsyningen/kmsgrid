@@ -304,9 +304,10 @@ class KMSGrid(object):
         if gdal_driver in ('NTv2', 'CTable2'):
             if len(dimensions) != 2:
                 raise ValueError(
-                    'Number of dimensions has to be exactly 2 when using the NTv2 driver.'
+                    'Number of dimensions has to be exactly 2 when using the {0] driver.'.format(gdal_driver)
                 )
-            nbands = 4
+            if gdal_driver == 'NTv2':
+                nbands = 4
 
         nodata = 9999.99
         if gdal_driver == 'GTX':
